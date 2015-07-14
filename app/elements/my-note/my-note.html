@@ -1,0 +1,38 @@
+<dom-module id="my-note">
+  <style>
+    :host {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      h1.paper-font-display1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+  <template>
+    <h1 class="paper-font-display1"><span>{{note.header}}</span></h1>
+    <p>{{note.body}}</p>
+    <!-- <select>
+      <template is="dom-repeat" items="{{}}"></template>
+    </select> -->
+  </template>
+</dom-module>
+<script>
+  (function() {
+    Polymer({
+      is: 'my-note',
+
+      properties: {
+        note: {
+          type: Object,
+          value: {
+            header: "this is header",
+            body: "this is note body"
+          },
+          notify: true
+        }
+      }
+    });
+  })();
+</script>
